@@ -1,19 +1,43 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Validar XML";
+    ViewData["Title"] = "Validador de XML";
 }
 
 <div class="text-center">
     <h2 class="display-6">Informar abaixo o XML da NF-e/NFC-e e clique em Validar</h2>
+    
     <hr />
     <div class="mb-3">
         <form method="POST">
             <label for="content" class="form-label">Cole o XML aqui...</label>
             <textarea class="form-control" id="content" rows="10" asp-for="@Model.XML"></textarea>
             <br />
-            <input type="submit" class="btn btn-primary" value="Validar Xml" />
+            <input type="submit" class="btn btn-success" value="Validar Xml" />
         </form>
     </div>
-    <p asp-for="@Model.Result">@Model.Result</p>
+    
+
+    @if (@Model.Result.Contains("Arquivo validado com sucesso"))
+    {
+        <div class="alert alert-success" role="alert">
+            @Model.Result
+        </div>
+    }
+    else @if (@Model.Result.Contains("Erro"))
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.Result
+        </div>
+    }
+    else @if (@Model.Result.Contains("Alerta"))
+    {
+        <div class="alert alert-warning" role="alert">
+            @Model.Result
+        </div>
+    }
+    else if (string.IsNullOrEmpty(@Model.Result))
+    {
+        
+    }
 </div>

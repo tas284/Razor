@@ -39,11 +39,12 @@ namespace Razor.Pages
             if(response.StatusCode == HttpStatusCode.OK)
             {
                 this.Result = response.Content.ReadAsStringAsync().Result;
-                this.OnGet(this.Result);
+                var value = this.Result.Replace("\"", "");
+                this.OnGet(value);
             }
             else
             {
-                this.OnGet("Contate o Suporte, sistema indisponível!");
+                this.OnGet("Sistema indisponível, contate o Suporte!");
             }
             
             return Page();

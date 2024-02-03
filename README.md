@@ -2,9 +2,12 @@
 
 This project serves to validate the XML of an [NFe](https://www.nfe.fazenda.gov.br/portal/principal.aspx).
 
-## Development server
+## Requirements
+SDK net6.0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ## Development server - Build and Run
+
+To run this project enter the root directory and run `dotnet build` && `dotnet run`
 
 ## Backend
 Depends on this project for run Backend: https://github.com/tas284/NFeXMLValidator

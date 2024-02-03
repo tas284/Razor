@@ -1,40 +1,28 @@
-﻿# Razor
+# Razor
 
-﻿## ASP.NET Core Project
+This project serves to validate the XML of an [NFe](https://www.nfe.fazenda.gov.br/portal/principal.aspx).
 
-This project was developed as a learning experience.
+## Development server
 
-## Requirements
-SDK net6.0
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Build and Run
+## Backend
+Depends on this project for run Backend: https://github.com/tas284/NFeXMLValidator
 
-To run this project enter the root directory and run `dotnet build` && `dotnet run`
+## Build image docker
 
-## Run With `docker compose`
+Run `docker build -t razor .`
 
-Enter the root directory and run
+## Run with docker compose
 
-1 - Build the updated image aspnet-core `docker compose build`
+Run `docker compose up -d`
 
-2 - Run docker-compose.yml `docker compose up -d`
+## Run Backend and Frontend in mode production with docker
 
-## Run with `docker run`
-
-```bash
-docker network create backend
-```
-
-## How to build and start a image exposure on port 5000 for HTTP
-```bash
-docker build -t razor .
-```
-```bash
-docker run -dp 5000:80 --env-file=".env" --network backend razor
-```
+Run `docker compose -f .\docker-compose.prod.yml up`
 
 If you set the environment variable ASPNETCORE_ENVIRONMENT to Develpment, [Swagger UI](https://swagger.io/tools/swagger-ui/) will be enabled, this will help you read the API documentation.
 
 You can also set the environment variable ASPNETCORE_ENVIRONMENT for Production to disable [Swagger UI](https://swagger.io/tools/swagger-ui/).
 
-Try in browser: http://localhost:5000/swagger/index.html
+Try in browser: http://localhost:5001/swagger/index.html

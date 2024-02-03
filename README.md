@@ -32,4 +32,4 @@ Try in browser: http://localhost:5001/swagger/index.html
 
 ## Dockerhub
 
-[Consider rating me one star](https://hub.docker.com/repository/docker/tiagosaldanha/razor/general)
+[Consider rating me one star](https://hub.docker.com/r/tiagosaldanha/razor)

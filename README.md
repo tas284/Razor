@@ -5,7 +5,7 @@ This project serves to validate the XML of an [NFe](https://www.nfe.fazenda.gov.
 ## Requirements
 SDK net6.0
 
-## ## Development server - Build and Run
+## Development server - Build and Run
 
 To run this project enter the root directory and run `dotnet build` && `dotnet run`
 

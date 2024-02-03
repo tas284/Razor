@@ -1,0 +1,32 @@
+﻿version: '3.9'
+
+services:
+
+  api:
+    container_name: nfe-xml-validator-api
+    image: tiagosaldanha/nfe-xml-validator-api:latest
+    restart: always
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Production"
+    ports:
+      - "5001:80"
+    networks:
+      - backend
+
+  razor:
+    container_name: razor
+    image: tiagosaldanha/razor:latest
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Production"
+      - "Api__Address=http://api:80/api/validarxml"
+    depends_on:
+      - api
+    ports:
+      - "5000:80"
+    networks:
+      - backend
+
+
+networks:
+  backend:
+    name: backend

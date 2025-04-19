@@ -1,35 +1,80 @@
-# Razor
 
-This project serves to validate the XML of an [NFe](https://www.nfe.fazenda.gov.br/portal/principal.aspx).
+# 🧾 Razor - Frontend para Validação de XML de NFe
 
-## Requirements
-SDK net6.0
+Este projeto é uma aplicação **ASP.NET Core Razor Pages** que serve como **interface frontend** para validação de arquivos XML de **Nota Fiscal Eletrônica (NFe)**, utilizando como backend o projeto [NFeXMLValidator](https://github.com/tas284/NFeXMLValidator).
 
-## Development server - Build and Run
+---
 
-To run this project enter the root directory and run `dotnet build` && `dotnet run`
+## ✅ Requisitos
 
-## Backend
-Depends on this project for run Backend: https://github.com/tas284/NFeXMLValidator
+- [.NET SDK 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- Docker (opcional)
+- Backend rodando: [NFeXMLValidator](https://github.com/tas284/NFeXMLValidator)
 
-## Build image docker
+---
 
-Run `docker build -t razor .`
+## ⚙️ Desenvolvimento - Build e Execução
 
-## Run with docker compose
+Entre no diretório raiz do projeto e execute:
 
-Run `docker compose up -d`
+```bash
+dotnet build
+dotnet run
+```
 
-## Run Backend and Frontend in mode production with docker
+---
 
-Run `docker compose -f .\docker-compose.prod.yml up`
+## 🐳 Executando com Docker
 
-If you set the environment variable ASPNETCORE_ENVIRONMENT to Develpment, [Swagger UI](https://swagger.io/tools/swagger-ui/) will be enabled, this will help you read the API documentation.
+### 📦 Build da imagem
 
-You can also set the environment variable ASPNETCORE_ENVIRONMENT for Production to disable [Swagger UI](https://swagger.io/tools/swagger-ui/).
+```bash
+docker build -t razor .
+```
 
-Try in browser: http://localhost:5001/swagger/index.html
+### ▶️ Executar com `docker compose`
 
-## Dockerhub
+```bash
+docker compose up -d
+```
 
-[Consider rating me one star](https://hub.docker.com/r/tiagosaldanha/razor)
+---
+
+## 🏭 Executar Frontend + Backend em Produção (docker-compose)
+
+```bash
+docker compose -f .\docker-compose.prod.yml up
+```
+
+---
+
+## 📘 Documentação da API via Swagger
+
+Se estiver usando o backend NFeXMLValidator, você pode acessar a documentação da API em:
+
+🔗 [http://localhost:5001/swagger/index.html](http://localhost:5001/swagger/index.html)
+
+- Ambiente `Development`: Swagger habilitado
+- Ambiente `Production`: Swagger desabilitado por padrão
+
+---
+
+## 🐳 DockerHub
+
+Se quiser apoiar o projeto, você pode avaliá-lo no Docker Hub:
+
+👉 [DockerHub - Razor](https://hub.docker.com/r/tiagosaldanha/razor)
+
+---
+
+## 📄 Licença
+
+Este projeto pode ser licenciado conforme sua preferência. Adicione um arquivo `LICENSE` com os termos desejados.
+
+---
+
+## 👨‍💻 Desenvolvido por
+
+Tiago (Razor XML Validator)
+
+---
